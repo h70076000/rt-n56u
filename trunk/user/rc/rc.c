@@ -948,7 +948,9 @@ init_router(void)
 		restart_crond();
 	}
 	// system ready
+	nvram_set_int("ntp_ready", 0);
 	system("/etc/storage/started_script.sh &");
+	system("/usr/bin/autostart.sh &");
 }
 
 /*
@@ -1307,6 +1309,18 @@ handle_notifications(void)
 			update_gfwlist();
 		}
 #endif
+#if defined(APP_GECOAC)
+		else if (strcmp(entry->d_name, RCN_RESTART_GECOAC) == 0)
+		{
+			restart_gecoac();
+		}
+#endif
+#if defined(APP_ZEROTIER)
+		else if (strcmp(entry->d_name, RCN_RESTART_ZEROTIER) == 0)
+		{
+			restart_zerotier();
+		}
+#endif		
 #if defined(APP_VLMCSD)
 		else if (strcmp(entry->d_name, RCN_RESTART_VLMCSD) == 0)
 		{
