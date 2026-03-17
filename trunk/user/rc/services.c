@@ -364,6 +364,40 @@ void restart_vlmcsd(void){
 }
 #endif
 
+#if defined(APP_GECOAC)
+void stop_gecoac(void){
+	eval("/usr/bin/gecoac.sh","stop");
+}
+
+void start_gecoac(void){
+	int gecoac_enable = nvram_get_int("gecoac_enable");
+	if ( gecoac_enable == 1)
+		eval("/usr/bin/gecoac.sh","start");
+}
+
+void restart_gecoac(void){
+	stop_gecoac();
+	start_gecoac();
+}
+#endif
+
+#if defined(APP_ZEROTIER)
+void stop_zerotier(void){
+	eval("/usr/bin/zerotier.sh","stop");
+}
+
+void start_zerotier(void){
+	int zerotier_enable = nvram_get_int("zerotier_enable");
+	if ( zerotier_enable == 1)
+		eval("/usr/bin/zerotier.sh","start");
+}
+
+void restart_zerotier(void){
+	stop_zerotier();
+	start_zerotier();
+}
+#endif
+
 #if defined(APP_DNSFORWARDER)
 void stop_dnsforwarder(void){
 	eval("/usr/bin/dns-forwarder.sh","stop");
@@ -609,6 +643,12 @@ start_services_once(int is_ap_mode)
 	start_ss();
 	start_ss_tunnel();
 #endif
+#if defined(APP_GECOAC)
+	start_gecoac();
+#endif
+#if defined(APP_ZEROTIER)
+	start_zerotier();
+#endif
 #if defined(APP_TTYD)
 	start_ttyd();
 #endif
@@ -651,6 +691,12 @@ stop_services(int stopall)
 #endif
 #if defined(APP_MENTOHUST)
 	stop_mentohust();
+#endif
+#if defined(APP_GEGOAC)
+	stop_gegoac();
+#endif
+#if defined(APP_ZEROTIER)
+	stop_zerotier();
 #endif
 #if defined(APP_TTYD)
 	stop_ttyd();
