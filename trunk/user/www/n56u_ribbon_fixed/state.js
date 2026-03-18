@@ -441,7 +441,7 @@ if (found_app_zerotier()){
 	tablink[14] = (zerotier_array);
 }
 if (found_app_gecoac()){
-	gecoac_arry = new Array("","Advanced_gecoac.asp");
+	gecoac_array = new Array("","Advanced_gecoac.asp");
 	tablink[15] = (gecoac_array);
 }
 
