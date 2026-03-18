@@ -442,7 +442,7 @@ if (found_app_zerotier()){
 }
 if (found_app_gegoac()){
 	gegoac_arry = new Array("","Advanced_gegoac.asp");
-	tablink[15] = (gegoac_arry);
+	tablink[15] = (gegoac_array);
 }
 
 //Level 2 Menu
@@ -465,11 +465,11 @@ if (found_app_mentohust()){
 } else menuL2_title.push("");
 
 if (found_app_zerotier()){
-	menuL2_title.push("内网穿透");
+	menuL2_title.push("zerotier");
 } else menuL2_title.push("");
 
 if (found_app_gegoac()){
-	menuL2_title.push("集客AC控制台");
+	menuL2_title.push("gegoac");
 } else menuL2_title.push("");
 
 menuL2_link  = new Array("", tablink[0][1], tablink[1][1], tablink[2][1], tablink[3][1], tablink[4][1], tablink[5][1], tablink[6][1], tablink[7][1], support_2g_radio() ? tablink[8][1] : "Main_EStatus_Content.asp", tablink[9][1]);
