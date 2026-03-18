@@ -21,9 +21,9 @@ do
 	fi
 done
 
-if [ $(nvram get gegoac_enable) = 1 ] ; then
+if [ $(nvram get gecoac_enable) = 1 ] ; then
 logger -t "自动启动" "正在启动巴法云物联网"
-/usr/bin/gegoac.sh start &
+/usr/bin/gecoac.sh start &
 fi
 
 if [ $(nvram get zerotier_enable) = 1 ] ; then
