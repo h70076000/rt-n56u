@@ -404,7 +404,7 @@ if (found_app_mentohust()){
 if (found_app_zerotier()){
 	tabtitle[14] = new Array("", "<#menu5_1_1#>");
 }
-if (found_app_gegoac()){
+if (found_app_gecoac()){
 	tabtitle[15] = new Array("", "<#menu5_1_1#>");
 }
 
@@ -440,9 +440,9 @@ if (found_app_zerotier()){
 	zerotier_array = new Array("","Advanced_zerotier.asp");
 	tablink[14] = (zerotier_array);
 }
-if (found_app_gegoac()){
-	gegoac_arry = new Array("","Advanced_gegoac.asp");
-	tablink[15] = (gegoac_array);
+if (found_app_gecoac()){
+	gecoac_arry = new Array("","Advanced_gecoac.asp");
+	tablink[15] = (gecoac_array);
 }
 
 //Level 2 Menu
@@ -468,8 +468,8 @@ if (found_app_zerotier()){
 	menuL2_title.push("zerotier");
 } else menuL2_title.push("");
 
-if (found_app_gegoac()){
-	menuL2_title.push("gegoac");
+if (found_app_gecoac()){
+	menuL2_title.push("gecoac");
 } else menuL2_title.push("");
 
 menuL2_link  = new Array("", tablink[0][1], tablink[1][1], tablink[2][1], tablink[3][1], tablink[4][1], tablink[5][1], tablink[6][1], tablink[7][1], support_2g_radio() ? tablink[8][1] : "Main_EStatus_Content.asp", tablink[9][1]);
@@ -493,8 +493,8 @@ if (found_app_zerotier()){
 	menuL2_link.push(zerotier_array[1]);
 } else menuL2_link.push("");
 
-if (found_app_gegoac()){
-	menuL2_link.push(gegoac_array[1]);
+if (found_app_gecoac()){
+	menuL2_link.push(gecoac_array[1]);
 } else menuL2_link.push("");
 
 //Level 1 Menu in Gateway, Router mode
