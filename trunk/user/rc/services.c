@@ -692,8 +692,8 @@ stop_services(int stopall)
 #if defined(APP_MENTOHUST)
 	stop_mentohust();
 #endif
-#if defined(APP_GEGOAC)
-	stop_gegoac();
+#if defined(APP_GECOAC)
+	stop_gecoac();
 #endif
 #if defined(APP_ZEROTIER)
 	stop_zerotier();
